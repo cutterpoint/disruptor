@@ -39,6 +39,10 @@ public final class Util
      */
     public static int ceilingNextPowerOfTwo(final int x)
     {
+        //在指定 int 值的二进制补码表示形式中最高位（最左边）的 1 位之前，返回零位的数量
+        //numberOfLeadingZeros 求x-1的最左边1的左边有几个0（对于int的4字节，32位）
+        //对于所有的正 int 值 ，下面就是求：
+        //32减去是获取的最高位是哪一位，8是32-4，里面减去1，就是29位
         return 1 << (32 - Integer.numberOfLeadingZeros(x - 1));
     }
 
